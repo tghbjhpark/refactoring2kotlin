@@ -1,8 +1,8 @@
 package chapter6
 
-fun readingsOutsideRange(station: Station, min: Int, range: Range): List<Reading> {
+fun readingsOutsideRange(station: Station, range: Range): List<Reading> {
     return station.readings.filter {
-        it.temp < min || it.temp > range.max
+        it.temp < range.min || it.temp > range.max
     }
 }
 
@@ -30,7 +30,7 @@ data class OperatingPlan(
 fun main() {
     val operatingPlan = OperatingPlan(24, 27)
     val range = Range(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling)
-    val alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, range)
+    val alerts = readingsOutsideRange(station, range)
 }
 
 val station = Station(
