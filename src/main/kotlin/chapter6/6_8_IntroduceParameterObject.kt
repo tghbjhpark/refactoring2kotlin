@@ -2,14 +2,16 @@ package chapter6
 
 fun readingsOutsideRange(station: Station, range: Range): List<Reading> {
     return station.readings.filter {
-        it.temp < range.min || it.temp > range.max
+        !range.contains(it.temp)
     }
 }
 
 data class Range(
     val min: Int,
     val max: Int
-)
+) {
+    fun contains(value: Int) = value in min..max
+}
 
 data class Station(
     val name: String,
