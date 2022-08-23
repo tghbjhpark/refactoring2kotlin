@@ -7,3 +7,5 @@ class Person(
 ) {
     fun getTelephoneNumber() = "($officeAreaCode) $officeNumber"
 }
+
+class TelephoneNumber
