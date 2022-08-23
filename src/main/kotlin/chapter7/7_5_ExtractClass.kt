@@ -6,10 +6,12 @@ class Person(
     val officeNumber: String,
     val telephoneNumber: TelephoneNumber
 ) {
-    fun getTelephoneNumber() = "(${telephoneNumber.officeAreaCode}) ${telephoneNumber.officeNumber}"
+    fun getTelephoneNumber() = telephoneNumber.getTelephoneNumber()
 }
 
 class TelephoneNumber(
     val officeAreaCode: String,
     val officeNumber: String
-)
+) {
+    fun getTelephoneNumber() = "($officeAreaCode) $officeNumber"
+}
