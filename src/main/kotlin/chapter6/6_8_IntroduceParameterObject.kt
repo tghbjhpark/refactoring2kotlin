@@ -29,7 +29,8 @@ data class OperatingPlan(
 
 fun main() {
     val operatingPlan = OperatingPlan(24, 27)
-    val alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, null)
+    val range = Range(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling)
+    val alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, range)
 }
 
 val station = Station(
