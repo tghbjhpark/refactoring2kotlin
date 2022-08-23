@@ -6,6 +6,11 @@ fun readingsOutsideRange(station: Station, min: Int, max: Int): List<Reading> {
     }
 }
 
+data class Range(
+    val min: Int,
+    val max: Int
+)
+
 data class Station(
     val name: String,
     val readings: List<Reading>
