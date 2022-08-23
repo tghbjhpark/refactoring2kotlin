@@ -6,7 +6,7 @@ class Person(
     val officeNumber: String,
     val telephoneNumber: TelephoneNumber
 ) {
-    fun getTelephoneNumber() = telephoneNumber.getTelephoneNumber()
+    fun getTelephoneNumber() = telephoneNumber.toString()
 }
 
 class TelephoneNumber(
@@ -14,4 +14,8 @@ class TelephoneNumber(
     val number: String
 ) {
     fun getTelephoneNumber() = "($areaCode) $number"
+
+    override fun toString(): String {
+        return "($areaCode) $number"
+    }
 }
