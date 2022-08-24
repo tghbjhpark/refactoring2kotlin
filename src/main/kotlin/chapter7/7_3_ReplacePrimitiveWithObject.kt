@@ -12,7 +12,7 @@ fun acquireData(csvData: String): List<String> {
     val lines = csvData.split("\n")
     val result = mutableListOf<String>()
     val loopItems = lines.drop(1)
-        .filter { it.trim() != "" }
+        .filter { it.trim().isNotEmpty() }
     for (line in loopItems) {
         val record = line.split(",")
         if (record[1].trim() == "India") {
