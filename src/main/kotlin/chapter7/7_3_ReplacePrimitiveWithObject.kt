@@ -10,11 +10,9 @@ const val sampleData =
 
 fun acquireData(csvData: String): List<String> {
     val lines = csvData.split("\n")
-    val result = lines.drop(1)
-        .filter { it.trim().isNotEmpty() }
-        .map { it.split(",") }
-        .filter { it[1].trim() == "India" }
-        .map { "city: ${it[0].trim()}, phone: ${it[2].trim()}" }
-
-    return result
+    return lines.drop(1)
+        .filter { line -> line.trim().isNotEmpty() }
+        .map { line -> line.split(",") }
+        .filter { fields -> fields[1].trim() == "India" }
+        .map { fields -> "city: ${fields[0].trim()}, phone: ${fields[2].trim()}" }
 }
