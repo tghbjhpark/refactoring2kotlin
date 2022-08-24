@@ -12,8 +12,8 @@ fun acquireData(csvData: String): List<String> {
     val lines = csvData.split("\n")
     val result = mutableListOf<String>()
     val loopItems = lines.drop(1)
+        .filter { it.trim() != "" }
     for (line in loopItems) {
-        if (line.trim() == "") continue
         val record = line.split(",")
         if (record[1].trim() == "India") {
             result.add("city: ${record[0].trim()}, phone: ${record[2].trim()}")
