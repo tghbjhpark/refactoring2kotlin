@@ -10,14 +10,9 @@ const val sampleData =
 
 fun acquireData(csvData: String): List<String> {
     val lines = csvData.split("\n")
-    var isFirstLine = true
     val result = mutableListOf<String>()
-    val loopItems = lines
+    val loopItems = lines.drop(1)
     for (line in loopItems) {
-        if (isFirstLine) {
-            isFirstLine = false
-            continue
-        }
         if (line.trim() == "") continue
         val record = line.split(",")
         if (record[1].trim() == "India") {
