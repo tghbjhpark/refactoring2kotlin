@@ -15,9 +15,10 @@ fun acquireData(csvData: String): List<String> {
         .filter { it.trim().isNotEmpty() }
         .map { it.split(",") }
         .filter { it[1].trim() == "India" }
+        .map { "city: ${it[0].trim()}, phone: ${it[2].trim()}" }
     for (line in loopItems) {
         val record = line
-        result.add("city: ${record[0].trim()}, phone: ${record[2].trim()}")
+        result.add(line)
     }
 
     return result
