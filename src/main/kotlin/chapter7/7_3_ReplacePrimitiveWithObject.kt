@@ -12,7 +12,8 @@ fun acquireData(csvData: String): List<String> {
     val lines = csvData.split("\n")
     var isFirstLine = true
     val result = mutableListOf<String>()
-    for (line in lines) {
+    val loopItems = lines
+    for (line in loopItems) {
         if (isFirstLine) {
             isFirstLine = false
             continue
