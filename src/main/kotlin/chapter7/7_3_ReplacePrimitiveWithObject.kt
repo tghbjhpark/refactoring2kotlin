@@ -1,8 +1,10 @@
 package chapter7
 
-class Order(val priority: String)
+class Priority(val value: String)
+
+class Order(val priority: Priority)
 
 fun highPriorityCount(orders: List<Order>) =
     orders
-        .filter { "high" == it.priority || "rush" == it.priority }
+        .filter { "high" == it.priority.value || "rush" == it.priority.value }
         .size
