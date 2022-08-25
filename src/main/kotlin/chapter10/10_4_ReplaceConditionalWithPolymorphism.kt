@@ -25,11 +25,7 @@ class Bird(
 }
 
 fun plumages(birds: List<Bird>): List<String> =
-    birds.map { "${it.name}, ${plumage(it)}" }
+    birds.map { "${it.name}, ${it.plumage()}" }
 
 fun speed(birds: List<Bird>): List<String> =
-    birds.map { "${it.name}, ${airSpeedVelocity(it)}" }
-
-fun plumage(bird: Bird): String = bird.plumage()
-
-fun airSpeedVelocity(bird: Bird): Int? = bird.airSpeedVelocity()
+    birds.map { "${it.name}, ${it.airSpeedVelocity()}" }
